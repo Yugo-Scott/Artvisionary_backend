@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::prefix('auth')->group(function () {
     // User Routes
     Route::post('user/login', UserLoginController::class)->middleware('guest');
-    // Route::post('user/register', UserRegisterController::class)->middleware('guest');
+    Route::post('user/register', UserRegisterController::class)->middleware('guest');
     Route::post('user/logout', UserLogoutController::class)->middleware('auth:sanctum');
 
 });
